@@ -1,6 +1,10 @@
-@include('common.header')
-
-<h1>home page</h1>
-
-
-@include('common.inner', ['page'=> "this is home page"])
+<div>
+    <h1>home page</h1>
+  <h3>
+      {{URL::current()}}
+  </h3>
+  {{url()->current()}}
+    <h3>
+        {{URL::full()}}
+    </h3>
+</div>

@@ -12,7 +12,7 @@ class UserController extends Controller
     }
 
     function About(){
-        return view('common.about');
+        return view('about');
     }
 
 
