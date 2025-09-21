@@ -7,13 +7,21 @@ namespace App\Http\Controllers;
 
 class UserController extends Controller
 {
-    function home(){
-        return view('home');
-    }
+    // function home(){
+    //     return view('home');
+    // }
 
-    function About(){
-        return view('about');
+    // function About(){
+    //     return view('about');
+    // }
+
+    function show(){
+        return  to_route('hm');
     }
+    function user(){
+        return  to_route('user', ["name"=>'anil']);
+    }
+    
 
 
     // //
