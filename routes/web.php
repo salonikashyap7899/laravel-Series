@@ -8,14 +8,23 @@ use App\Http\Controllers\HomeController;
 
 
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 
 
-Route::view('home', 'home');
+// Route::view('home', 'home')->middleware('check1');
+
+
+Route::middleware('check1')->group(function(){
+      
 Route::view('about', 'about');
+Route::view('contact', 'contact');
+Route::view('list', 'list');
+Route::view('home', 'home');
+});
 
 
 // Route::controller(HomeController::class)->group(function(){
@@ -25,8 +34,6 @@ Route::view('about', 'about');
 // Route::get('about/{name}',  'about ');
 
 // }); 
-
-
 // Route::get('about/{name}', [HomeController::class, 'about']);
 
 
