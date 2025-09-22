@@ -14,7 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         //
-        $middleware->appendToGroup('check1', [Agecheck::class, CountryCheck::class]);
+        // $middleware->appendToGroup('check1', [Agecheck::class, CountryCheck::class]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

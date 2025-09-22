@@ -17,9 +17,10 @@ class Agecheck
     {
       
          if($request->age<18){
-            die("you can not acces this website becouse you are not above 18");
+            die("you can not acces this website ");
         }
-       
+
+      
         return $next($request);
     }
 }

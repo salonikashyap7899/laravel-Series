@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\View;
 
 class UserController extends Controller
@@ -15,14 +16,19 @@ class UserController extends Controller
     //     return view('about');
     // }
 
-    function show(){
-        return  to_route('hm');
-    }
-    function user(){
-        return  to_route('user', ["name"=>'anil']);
-    }
+    // function show(){
+    //     return  to_route('hm');
+    // }
+    // function user(){
+    //     return  to_route('user', ["name"=>'anil']);
+    // }
     
 
+
+    function users(){
+         $users = DB::select('select * from users');
+         return view('users', ['users'=>$users]);
+    }
 
     // //
     // function getUser(){

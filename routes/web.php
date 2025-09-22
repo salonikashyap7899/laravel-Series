@@ -1,30 +1,44 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserController;
+
 // use App\Http\Controllers\formController;
 use App\Http\Controllers\HomeController;
-
-
-
+use App\Http\Controllers\studentsController;
+use App\Http\Middleware\Agecheck;
+use App\Http\Middleware\CountryCheck;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('students', [studentsController::class, 'getStudents']);
+
+
+
+
+
+// Route::get('users', [UserController::class , 'users']);
+
+// Route::view('home', 'home')->middleware([AgeCheck::class, CountryCheck::class]);
+// Route::view('about', 'about');
+
+
+
 
 
 // Route::view('home', 'home')->middleware('check1');
 
 
-Route::middleware('check1')->group(function(){
+// Route::middleware('check1')->group(function(){
       
-Route::view('about', 'about');
-Route::view('contact', 'contact');
-Route::view('list', 'list');
-Route::view('home', 'home');
-});
+// Route::view('about', 'about');
+// Route::view('contact', 'contact');
+// Route::view('list', 'list');
+// Route::view('home', 'home');
+// });
 
 
 // Route::controller(HomeController::class)->group(function(){
