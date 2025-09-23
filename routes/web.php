@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -8,13 +9,41 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\studentsController;
 use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
-
+use Phiki\Phast\Root;
 
 Route::get('/', function () {
     return view('welcome');
 });
+// Route::get('/user', [UserController::class , 'get']);
+// Route::post('/user', [UserController::class , 'post']);
+// Route::put('/user', [UserController::class , 'put']);
+// Route::Delete('/user', [UserController::class , 'Delete']);
+// Route::view('form', 'user');
 
-Route::get('students', [studentsController::class, 'getStudents']);
+Route::match(['post', 'get'], '/user',[UserController::class , 'groupFunc'] );
+
+// Route::any('/user', [UserController::class, 'any']);
+Route::view('form', 'user');
+
+
+
+// Route::get('users', [UserController::class , 'queries']);
+// Route::get('users', [ApiController::class , 'users']);
+
+
+
+
+
+// Route::get('users', [ApiController::class , 'getUser']);
+
+
+
+
+
+
+
+
+// Route::get('students', [studentsController::class, 'getStudents']);
 
 
 

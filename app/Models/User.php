@@ -45,4 +45,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    use HasFactory;
+    public $timestamps=false;
 }

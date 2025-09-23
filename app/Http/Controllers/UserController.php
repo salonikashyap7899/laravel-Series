@@ -2,12 +2,35 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\View;
+use App\Models\User;
 
 class UserController extends Controller
 {
+      function get( ){
+            return 'get routes methods';
+        }
+      function post( ){
+            return 'post routes methods';
+        }
+      function put( ){
+            return 'put routes methods';
+        }
+      function delete( ){
+            return 'delete routes methods';
+        }
+      function any( ){
+            return 'this is any function';
+        }
+      function groupFunc( ){
+            return 'this is groupFunc';
+        }
+
+
+
+
+
     // function home(){
     //     return view('home');
     // }
@@ -25,10 +48,10 @@ class UserController extends Controller
     
 
 
-    function users(){
-         $users = DB::select('select * from users');
-         return view('users', ['users'=>$users]);
-    }
+    // function users(){
+    //      $users = DB::select('select * from users');
+    //      return view('users', ['users'=>$users]);
+    // }
 
     // //
     // function getUser(){
@@ -50,11 +73,11 @@ class UserController extends Controller
     // function userhome(){
     //     return view('home');
     // // }
-    function userAbout($name){
-        $users = ['anil', 'sam', 'anu'];
-        return view('about', ['name'=>$name, 'users' => $users]);
-        // return view ('about');
-    }
+    // function userAbout($name){
+    //     $users = ['anil', 'sam', 'anu'];
+    //     return view('about', ['name'=>$name, 'users' => $users]);
+    //     // return view ('about');
+    // }
   
     // function adminLogin(){
     //     if(View::exists('admin.login')){
@@ -64,4 +87,60 @@ class UserController extends Controller
     //     }
     //     return view('admin.login');
     // }
+
+
+
+    // function queries(){
+    //   $response = User::all();
+    //   $response = User::get();
+    // $response = User::where('phone', '12345')->get();
+    //   $response = User::where('phone', '12345')->first();
+    // $response =  User::find(1);
+
+    //    $response = User::insert([
+    //     'name'=>'kay',
+    //     'email'=>'jay@gmail.com',
+    //     'password'=>12345,
+    //    ]);
+    //    if($response){
+    //      return 'data inserted';
+
+    //    } else {
+    //         return "data not inserted";
+    //    }
+
+
+    //    $response = User::where('name', 'kay')->update(['password' => 6789]);
+    //    if($response){
+    //      return 'data updated';
+
+    //    } else {
+    //         return "data not updated";
+    //    }
+
+    //    $response = User::where('name', 'kay')->delete();
+    //    if($response){
+    //      return 'data delete';
+
+    //    } else {
+    //         return "data not delete";
+    //    }
+        // return view('users', ['users'=>$response])};
+        
+
+
+      
+
+    
 }
+
+
+
+
+
+
+
+
+
+
+
