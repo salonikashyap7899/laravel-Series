@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 
 // use App\Http\Controllers\formController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\studentsController;
 use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
@@ -14,16 +15,28 @@ use Phiki\Phast\Root;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::view('login', "login");
+Route::post('login', [LoginController::class, 'login']);
+
+
+
+
+// Route::post('user', [UserController::class, 'login']);
+// Route::view('form', 'user');
+
+
+
 // Route::get('/user', [UserController::class , 'get']);
 // Route::post('/user', [UserController::class , 'post']);
 // Route::put('/user', [UserController::class , 'put']);
 // Route::Delete('/user', [UserController::class , 'Delete']);
 // Route::view('form', 'user');
 
-Route::match(['post', 'get'], '/user',[UserController::class , 'groupFunc'] );
+// Route::match(['post', 'get'], '/user',[UserController::class , 'groupFunc'] );
 
 // Route::any('/user', [UserController::class, 'any']);
-Route::view('form', 'user');
+// Route::view('form', 'user');
 
 
 

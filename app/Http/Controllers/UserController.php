@@ -8,24 +8,64 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-      function get( ){
-            return 'get routes methods';
-        }
-      function post( ){
-            return 'post routes methods';
-        }
-      function put( ){
-            return 'put routes methods';
-        }
-      function delete( ){
-            return 'delete routes methods';
-        }
-      function any( ){
-            return 'this is any function';
-        }
-      function groupFunc( ){
-            return 'this is groupFunc';
-        }
+  
+   
+
+      
+
+
+
+
+
+
+
+    //  function login(Request $request){
+    //    echo  "Request methos is ".  $request->method();
+    //    echo "<br>";
+    //    echo  "Request methos is ".  $request->path();
+    //    echo "<br>";
+    //    echo  "Request methos is ".  $request->url();
+    //    echo "<br>";
+    //    echo  "name  is ".  $request->input('name');
+    //    echo "<br>";
+    //    print_r(($request->input()));
+    //    echo "<br>";
+    //    print_r(($request->collect()));
+
+    //    if($request->isMethod('post')){
+    //     echo "excute code for post req";
+    //    } else {
+    //          echo "excute code for post failed ";
+    //    }
+    //    if($request->is('post')){
+    //     echo "excute code for post req";
+    //    } else {
+    //          echo "excute code for post failed ";
+    //    }
+
+
+    //  }
+
+
+  
+     // function get( ){
+      //       return 'get routes methods';
+      //   }
+      // function post( ){
+      //       return 'post routes methods';
+      //   }
+      // function put( ){
+      //       return 'put routes methods';
+      //   }
+      // function delete( ){
+      //       return 'delete routes methods';
+      //   }
+      // function any( ){
+      //       return 'this is any function';
+      //   }
+      // function groupFunc( ){
+      //       return 'this is groupFunc';
+      //   }
 
 
 
