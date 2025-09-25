@@ -13,7 +13,11 @@ class UserController extends Controller
 
       
 
-
+   function addUser(Request $request){
+     $request->session()->flash('message', 'user has been added succesfully');
+     $request->session()->flash('name', 'anil');
+    return redirect('user');
+   }
 
 
 

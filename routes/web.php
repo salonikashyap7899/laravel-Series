@@ -3,11 +3,13 @@
 use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\App;
 
 // use App\Http\Controllers\formController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\studentsController;
+use App\Http\Controllers\upload;
 use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
 use Phiki\Phast\Root;
@@ -16,8 +18,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('login', "login");
-Route::post('login', [LoginController::class, 'login']);
+Route::view('localization/{lang}', function($lang){
+     App::setlocale($lang);
+ return view('localization');
+
+}, 'localization');
+
+// Route::view('upload','upload' );
+// Route::post('upload', [upload::class, 'upload']);
+
+// Route::post('add', [UserController::class, 'addUser']);
+// Route::view('user', 'user');
+
+// Route::view('login', "login");
+// Route::view('profile', "profile");
+// Route::post('login', [LoginController::class, 'login']);
+// Route::get('logout', [LoginController::class, 'logout']);
 
 
 

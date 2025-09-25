@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
     <h1>Login</h1>
     <form action="/login" method="post">
         @csrf
@@ -12,5 +12,6 @@
 <br>
       <br>
     </form>
-    <!-- It always seems impossible until it is done. - Nelson Mandela -->
-</div>
+</div> -->
+
+
