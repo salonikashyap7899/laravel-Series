@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use  App\Http\Middleware\setLang;
 use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
 
@@ -15,6 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         //
         // $middleware->appendToGroup('check1', [Agecheck::class, CountryCheck::class]);
+        $middleware->appendToGroup('setLang', setLang::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

@@ -4,6 +4,7 @@ use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
 
 // use App\Http\Controllers\formController;
 use App\Http\Controllers\HomeController;
@@ -14,15 +15,28 @@ use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
 use Phiki\Phast\Root;
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::view('localization/{lang}', function($lang){
-     App::setlocale($lang);
- return view('localization');
+ Route::get('/', function () {
+        return view('welcome');
+    });
 
-}, 'localization');
+
+// Route::middleware('setLang')->group(function () {
+//     Route::get('/', function () {
+//         return view('welcome');
+//     });
+
+//     Route::view('localization/{lang}', function ($lang) {
+//         App::setlocale($lang);
+//         return view('localization');
+//     });
+
+//     Route::get('setLang/{lang}', function ($lang) {
+//         Session::put('lang', $lang);
+//         return redirect('/');
+//     });
+// });
+
 
 // Route::view('upload','upload' );
 // Route::post('upload', [upload::class, 'upload']);
@@ -294,5 +308,3 @@ Route::view('localization/{lang}', function($lang){
 
 //     return view('about',['name' => $name]);
 // });
-
-
