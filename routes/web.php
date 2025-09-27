@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 // use App\Http\Controllers\formController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\stdController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\upload;
 use App\Http\Middleware\Agecheck;
@@ -19,6 +20,16 @@ use Phiki\Phast\Root;
  Route::get('/', function () {
         return view('welcome');
     });
+
+
+ Route::view('add', 'addStudent');
+ Route::post('add', [stdController::class, 'add']);
+ Route::get('list', [stdController::class, 'list']); 
+Route::get('delete/{id}',[stdController::class, 'delete'] );
+Route::get('edit/{id}',[stdController::class, 'edit'] );
+
+
+
 
 
 // Route::middleware('setLang')->group(function () {
