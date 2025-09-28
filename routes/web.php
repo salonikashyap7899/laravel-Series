@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -8,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 
 // use App\Http\Controllers\formController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\imgeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\stdController;
 use App\Http\Controllers\studentsController;
@@ -16,17 +16,33 @@ use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
 use Phiki\Phast\Root;
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
- Route::get('/', function () {
-        return view('welcome');
-    });
+
+Route::view('imge ', 'ImageUpload');
+Route::post('imge', [imgeController::class , 'upload']);
+Route::get('imgList', [imgeController::class, 'listimge']);
+
+Route::view('add', 'addStudent');
+Route::post('add', [stdController::class, 'add']);
+Route::get('list', [stdController::class, 'list']);
+Route::get('delete/{id}', [stdController::class, 'delete']);
+Route::get('edit/{id}', [stdController::class, 'edit']);
+Route::put('edit-student/{id}', [stdController::class, 'editStudent']);
+Route::get('search', [stdController::class, 'search']);
+Route::post('delete-multi', [stdController::class, 'DeletMulti']);
 
 
- Route::view('add', 'addStudent');
- Route::post('add', [stdController::class, 'add']);
- Route::get('list', [stdController::class, 'list']); 
-Route::get('delete/{id}',[stdController::class, 'delete'] );
-Route::get('edit/{id}',[stdController::class, 'edit'] );
+
+
+
+
+
+
+
+
 
 
 
