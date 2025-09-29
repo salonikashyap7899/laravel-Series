@@ -21,7 +21,7 @@ class imgeController extends Controller
             return "error try after somtimes";
         }
     }
-
+ 
     function listimge(){
         $images = image::all();
         return view('ImageDisplay', ['img'=> $images]);

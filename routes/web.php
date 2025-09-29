@@ -16,9 +16,21 @@ use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
 use Phiki\Phast\Root;
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+ Route::view('admin', 'admin');
+ Route::view('layoutLogin', 'layoutLogin');
+
+
+ Route::view('layout', 'layout');
+ Route::view('layoutHome', 'layoutHome');
+
+ 
 
 
 Route::view('imge ', 'ImageUpload');
