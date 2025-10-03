@@ -1,4 +1,6 @@
 <?php
+
+use App\Http\Controllers\AccessorController;
 use App\Http\Controllers\ApiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -22,6 +24,10 @@ use Phiki\Phast\Root;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('list', [AccessorController::class, 'list']);
+Route::get('save', [AccessorController::class, 'save']);
+
 
  Route::view('admin', 'admin');
  Route::view('layoutLogin', 'layoutLogin');
