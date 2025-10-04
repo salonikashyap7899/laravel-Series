@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\imgeController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\SellerController;
 use App\Http\Controllers\stdController;
 use App\Http\Controllers\studentsController;
 use App\Http\Controllers\upload;
@@ -25,8 +27,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('list', [AccessorController::class, 'list']);
-Route::get('save', [AccessorController::class, 'save']);
+
+Route::get('send-email', [MailController::class, 'sendEmail']);
+
+
+Route::get('Sellerlist', [SellerController::class, 'Sellerlist']);
+Route::get('manyRel', [SellerController::class, 'manyRel']);
+Route::get('oneToManyRel', [SellerController::class, 'oneToManyRel']);
+
+// Route::get('list', [AccessorController::class, 'list']);
+// Route::get('save', [AccessorController::class, 'save']);
 
 
  Route::view('admin', 'admin');
