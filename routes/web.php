@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccessorController;
 use App\Http\Controllers\ApiController;
+use App\Http\Controllers\DeviceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\App;
@@ -10,6 +11,7 @@ use Illuminate\Support\Facades\Session;
 // use App\Http\Controllers\formController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\imgeController;
+use App\Http\Controllers\Inline;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\SellerController;
@@ -19,7 +21,18 @@ use App\Http\Controllers\upload;
 use App\Http\Middleware\Agecheck;
 use App\Http\Middleware\CountryCheck;
 use Phiki\Phast\Root;
+use Illuminate\Support\Str;
 
+
+
+$info = "hii, this is laravel series";
+$info =Str::of($info)->ucfirst()->replaceFirst('laravel', 'Laravel')->camel($info);
+
+// 
+// $info= Str::ucfirst($info);
+// $info= Str::replaceFirst('laravel', 'Laravel', $info);
+// $info= Str::camel($info);
+// echo $info;
 
 
 
@@ -27,8 +40,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('inline', [Inline::class, 'inlineTemplate']);
 
-Route::get('send-email', [MailController::class, 'sendEmail']);
+
+Route::get('devices/{key:member_id}', [DeviceController::class, 'index']);
+
+
+
+
+Route::post('send-email', [MailController::class, 'sendEmail']);
+Route::view('send-email', 'SendEmail');
+
 
 
 Route::get('Sellerlist', [SellerController::class, 'Sellerlist']);

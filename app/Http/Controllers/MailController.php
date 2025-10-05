@@ -8,12 +8,14 @@ use App\Mail\WelcomeEmail;
 class MailController extends Controller
 {
     //
-    function sendEmail(){
-        $to="ayuanukashyap@gmail.com";
-        $msg="Hello from Laravel";
-        $subject="Test Email from Laravel";
-           Mail::to($to)->send(new WelcomeEmail($msg,$subject));
-    return "Email Sent"; 
+     function sendEmail(Request $request)
+    {
+        $to = $request->input('to');
+             $subject = $request->input('subject');
+        $msg = $request->input('msg');
+   
+        Mail::to($to)->send(new WelcomeEmail($msg, $subject));
+        return "Email Sent Successfully!";
     }
  
 }
